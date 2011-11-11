@@ -8,18 +8,14 @@ module ActiveAdmin
           unless meta_search_1_1?
             warn "ActiveAdmin requires meta_search >= 1.1.0.pre to work with rails >= 3.1.0"
           end
-          unless asset_pipeline_enabled? && sass_rails_3_1?
-            warn "ActiveAdmin requires sass-rails ~> 3.1.0.rc to work with rails >= 3.1.0"
-          end
+          #unless sass_rails_3_1?
+          #  warn "ActiveAdmin requires sass-rails ~> 3.1.0.rc to work with rails >= 3.1.0"
+          #end
         end
       end
 
       def rails_3_1?
         Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR >= 1
-      end
-      
-      def asset_pipeline_enabled?
-        Rails.application.config.assets.enabled
       end
 
       def meta_search_1_1?
